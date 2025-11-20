@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import 'remixicon/fonts/remixicon.css';
 import Script from "next/script";
 import { useEffect } from "react";
 
@@ -127,7 +128,7 @@ export default function Home() {
               </p>
 
               <a href="#" className="button btn-about">
-                Explore Event Organizer <i className="ri-arrow-right-line"></i>
+                Explore Us <i className="ri-arrow-right-line"></i>
               </a>
             </div>
 
