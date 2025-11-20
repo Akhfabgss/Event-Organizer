@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
     <div>
-      <Script src="js/scrollreveal.min.js" />
+      <Script src="js/scrollreveal.min.js" strategy="afterInteractive" />
       <Script src="/js/myscript.js" strategy="afterInteractive" />
       {/* ==================== HEADER ==================== */}
       <header className="header" id="header">
