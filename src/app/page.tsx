@@ -9,6 +9,7 @@ export default function Home() {
 
   return (
     <div>
+      <Script src="js/scrollreveal.min.js" />
       <Script src="/js/myscript.js" strategy="afterInteractive" />
       {/* ==================== HEADER ==================== */}
       <header className="header" id="header">
@@ -128,7 +129,7 @@ export default function Home() {
               </p>
 
               <a href="#" className="button btn-about">
-                Explore Us <i className="ri-arrow-right-line"></i>
+                Explore Our Event <i className="ri-arrow-right-line"></i>
               </a>
             </div>
 
