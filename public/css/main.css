@@ -2,6 +2,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Poppins:wght@400;500&display=swap");
 
 /*=============== VARIABLES CSS ===============*/
+.partner-wrapper img {
+  all: revert-layer;
+}
+
+.partner-wrapper div {
+  all: revert-layer;
+}
+
+.partner-wrapper {
+  all: revert-layer;
+  margin-top: 2rem;
+}
+
+.partner-wrapper * {
+  box-sizing: border-box;
+}
+
+.main-reset * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 :root {
     --header-height: 3.5rem;
 
@@ -37,10 +60,12 @@
 }
 
 /*=============== BASE ===============*/
-*{
-    box-sizing: border-box;
+@layer base {
+  * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+  }
 }
 
 html{
@@ -91,10 +116,6 @@ img{
     margin-inline: 1.5rem;
 }
 
-.grid {
-    display: grid;
-    gap: 1.5rem;
-}
 
 .section {
     padding-block: 5rem 1rem;
@@ -401,15 +422,15 @@ img{
 }
 
 
-/*=============== Popular ===============*/
-.popular__container{
+/*=============== gallery ===============*/
+.gallery__container{
     padding-top: 1.5rem;
     grid-template-columns: 240px;
     justify-content: center;
     row-gap: 2.5rem;
 }
 
-.popular__image{
+.gallery__image{
     width: 100%;
     height: 300px;
     border-radius: 12px;
@@ -418,7 +439,7 @@ img{
     margin-bottom: 1rem;
 }
 
-.popular__img{
+.gallery__img{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -426,7 +447,7 @@ img{
     transition: transform .4s;
 }
 
-.popular__shadow{
+.gallery__shadow{
     position: absolute;
     top: 0;
     left: 0;
@@ -437,12 +458,12 @@ img{
                 hsl(0, 0%, 0%) 125%);
 }
 
-.popular__title {
+.gallery__title {
     font-size: var(--h3-font-size);
     margin-bottom: .5rem;
 }
 
-.popular__location{
+.gallery__location{
     display: inline-flex;
     align-items: center;
     column-gap: .25rem;
@@ -451,11 +472,11 @@ img{
     font-weight: 500;
 }
 
-.popular__location i {
+.gallery__location i {
     font-size: 1rem;
 }
 
-.popular__image:hover .popular__img{
+.gallery__image:hover .gallery__img{
     transform: scale(1.2);
 }
 
@@ -549,6 +570,7 @@ img{
     position: relative;
     justify-self: start; /* ganti dari center ke start */
     overflow: hidden;
+    object-fit: cover;
 }
 
 .join__img{
@@ -703,6 +725,13 @@ img{
 
 /* For medium devices */
 @media screen and (max-width: 575px){
+    .container{
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
     .home__container,
     .about__container,
     .explore__content,
@@ -714,6 +743,220 @@ img{
     .footer__data{
         grid-template-columns: repeat(3, max-content);
     }
+
+    /* Home */
+    .home__bg {
+        height: 550px;
+        object-fit: cover;
+    }
+
+    .home__shadow {
+        height: 600px;
+    }
+
+    .home__container {
+        padding-top: 1rem;
+        row-gap: 2rem;
+    }
+
+    .home__subtitle {
+        font-size: 1rem;
+    }
+
+    .home__title {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .home__description {
+        font-size: .9rem;
+        padding: 0 1rem;
+    }
+
+    .button {
+        padding: 1rem 1.25rem;
+        font-size: .9rem;
+    }
+
+    .home__cards {
+    grid-template-columns: 1fr !important;
+    width: 100%;
+    gap: 1rem;
+    padding-inline: 1rem;
+    justify-content: center;
+    }
+
+    .home__card-img {
+        width: 100%;
+        height: 180px; /* kasih tinggi rapi */
+        object-fit: cover;
+    }
+
+    .home__card {
+        width: 100%;
+    }
+
+    .home__card-title {
+        font-size: .9rem;
+    }
+
+    /* About */
+    .about__container {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+        row-gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .about__data,
+    .about__data .section__title {
+        text-align: center !important;
+    }
+
+    .about__image {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .about__img {
+        width: 90% !important;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+
+    .btn-about {
+        margin-inline: auto !important;
+    }
+
+    /* Gallery  */
+    .gallery__container {
+    grid-template-columns: 1fr !important;
+    row-gap: 2rem;
+    padding: 0 1rem !important;
+    }
+
+    .gallery__card {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .gallery__image {
+        width: 100%;
+    }
+
+    .gallery__img {
+        width: 100% !important;
+        object-fit: cover;
+        border-radius: 14px;
+    }
+
+    .gallery__title {
+        font-size: 1.1rem;
+    }
+
+    .gallery__location {
+        justify-content: center !important;
+    }
+
+
+    /* Join */
+    .join__container{
+    grid-template-columns: 1fr !important;
+    row-gap: 2rem;
+    padding: 0 1rem !important;
+    text-align: center;
+  }
+
+  /* Gambar jadi full width & rapih */
+  .join__image{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    }
+
+    .section__title{
+        text-align: center !important;
+    }
+
+    .join__img{
+        width: 100% !important;
+        height: 240px !important;
+        object-fit: cover !important;
+        border-radius: 14px;
+    }
+
+    .join__shadow{
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .join__data{
+        text-align: center !important;
+    }
+
+    .join__form{
+        width: 100%;
+        display: grid;
+        gap: 1rem;
+    }
+
+    .join__input{
+        width: 100%;
+    }
+
+    .join__button{
+        width: 100%;
+    }
+
+    /* Footer */
+    .footer__container {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    row-gap: 3rem !important;
+    text-align: center !important;
+    padding: 0 1.5rem !important;
+    }
+
+    .footer__content {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    row-gap: 2rem !important;
+    justify-items: center !important;
+    }
+
+    .footer__data {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    row-gap: 2rem !important;
+    text-align: center !important;
+    }
+
+    .footer__links {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: .5rem !important;
+    align-items: center !important;
+    }
+
+    .footer__group {
+    text-align: center !important;
+    }
+
+    .footer__social {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 1.2rem !important;
+    }
+
+    .footer__copy {
+    margin-top: 1rem !important;
+    display: block !important;
+    }
+
 }
 
 @media screen and (max-width: 768px){
@@ -734,7 +977,7 @@ img{
         text-align: initial;
     }
 
-    .popular__container{
+    .gallery__container{
         grid-template-columns: repeat(2, 240px);
     }
 
@@ -784,7 +1027,7 @@ img{
         column-gap: 4rem;
     }
 
-    .popular__container{
+    .gallery__container{
         grid-template-columns: repeat(3, 240px);
     }
 
@@ -876,17 +1119,17 @@ img{
         margin-right: 15.5rem;
     }
 
-    .popular__container{
+    .gallery__container{
         grid-template-columns: repeat(3,300px);
         column-gap: 3rem;
         padding-top: 4rem;
     }
 
-    .popular__title{
+    .gallery__title{
         font-size: var(--h2-font-size);
     }
 
-    .popular__location{
+    .gallery__location{
         font-size: var(--normal-font-size);
     }
 

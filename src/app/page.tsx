@@ -4,13 +4,17 @@ import Image from "next/image";
 import 'remixicon/fonts/remixicon.css';
 import Script from "next/script";
 import { useEffect } from "react";
+import Partner from "../components/partner";
 
 export default function Home() {
 
   return (
     <div>
-      <Script src="js/scrollreveal.min.js" strategy="afterInteractive" />
+
+      {/* ==================== JAVASCRIPT FILES ==================== */}
+      <Script src="/js/scrollreveal.min.js" strategy="afterInteractive" />
       <Script src="/js/myscript.js" strategy="afterInteractive" />
+
       {/* ==================== HEADER ==================== */}
       <header className="header" id="header">
         <nav className="nav container">
@@ -33,14 +37,20 @@ export default function Home() {
               </li>
 
               <li className="nav__item">
-                <a href="#popular" className="nav__link">
-                  Popular
+                <a href="#gallery" className="nav__link">
+                  Gallery
                 </a>
               </li>
 
               <li className="nav__item">
                 <a href="#explore" className="nav__link">
                   Explore
+                </a>
+              </li>
+
+              <li className="nav__item">
+                <a href="#partner" className="nav__link">
+                  Partner
                 </a>
               </li>
             </ul>
@@ -146,35 +156,36 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ==================== POPULAR ==================== */}
-        <section className="popular section" id="popular">
+        {/* ==================== GALLERY ==================== */}
+        <section className="gallery section" id="gallery">
           <h2 className="section__title">
-            Enjoy The Beauty
-            <br />
-            Of The World
+            Our Gallery
           </h2>
 
-          <div className="popular__container container grid">
+          <div className="gallery__container container grid">
             {[
               { img: "popular1.avif", name: "Marketing Event Safari", loc: "Jakarta" },
               { img: "popular2.avif", name: "Program Launching 1000 Startup", loc: "Bogor" },
               { img: "popular3.avif", name: "Awarding Dynatech", loc: "Jakarta" },
+              { img: "popular4.jpg", name: "Wedding Artis", loc: "Jakarta" },
+              { img: "popular5.avif", name: "Financial Revolution", loc: "Singapura" },
+              { img: "popular6.jpg", name: "Bogor Festival", loc: "Bogor" },
             ].map((item, index) => (
-              <article className="popular__card" key={index}>
-                <div className="popular__image">
+              <article className="gallery__card" key={index}>
+                <div className="gallery__image">
                   <Image
                     src={`/assets/img/${item.img}`}
-                    alt="popular image"
-                    className="popular__img"
+                    alt="gallery image"
+                    className="gallery__img"
                     width={400}
                     height={260}
                   />
-                  <div className="popular__shadow"></div>
+                  <div className="gallery__shadow"></div>
                 </div>
 
-                <h2 className="popular__title">{item.name}</h2>
+                <h2 className="gallery__title">{item.name}</h2>
 
-                <div className="popular__location">
+                <div className="gallery__location">
                   <i className="ri-map-pin-line"></i>
                   <span>{item.loc}</span>
                 </div>
@@ -225,6 +236,11 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ==================== Partner ==================== */}
+        <section id="partner">
+            <Partner />
+        </section>
+
         {/* ==================== JOIN ==================== */}
         <section className="join section">
           <div className="join__container container grid">
@@ -232,9 +248,9 @@ export default function Home() {
               <Image
                 src="/assets/img/join.jpg"
                 alt="join image"
-                className="join__img"
+                className="join__img object-cover !w-full !h-[400px] !object-cover"
                 width={700}
-                height={500}
+                height={400}
               />
               <div className="join__shadow"></div>
             </div>
@@ -331,7 +347,7 @@ export default function Home() {
             </div>
 
             <span className="footer__copy">
-              © Copyright Akhfa Bagas. All rights reserved
+              © Copyright Nexora Studio. All rights reserved
             </span>
           </div>
         </div>
@@ -341,10 +357,6 @@ export default function Home() {
       <a href="#" className="scrollup" id="scroll-up">
         <i className="ri-arrow-up-line"></i>
       </a>
-
-      {/* ==================== JAVASCRIPT FILES ==================== */}
-      <Script src="/assets/js/scrollreveal.min.js" strategy="afterInteractive" />
-      <Script src="/assets/js/main.js" strategy="afterInteractive" />
     </div>
   );
 }
