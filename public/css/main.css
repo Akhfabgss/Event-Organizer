@@ -314,8 +314,9 @@ img{
 .home__cards{
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(4, 240px);
-    gap: 1.5rem;
+    /* show five cards in one row on desktop; slightly smaller so they fit inside container */
+    grid-template-columns: repeat(5, 180px);
+    gap: 1rem;
     justify-content: center;
 }
 
@@ -327,6 +328,9 @@ img{
 
 .home__card-img{
     transition: transform .4s;
+    width: 100%;
+    height: 140px; /* consistent card image height */
+    object-fit: cover;
 }
 
 .home__card-shadow{
@@ -392,6 +396,11 @@ img{
 
 .about__description{
     margin-bottom: 2rem;
+    text-align: justify;
+    text-justify: inter-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
 }
 
 .about__image{
@@ -668,6 +677,85 @@ img{
     font-size: var(--smaller-font-size);
     color: var(--text-color-light);
     text-align: center;
+}
+
+/*=============== Footer - New Styles ===============*/
+.footer__logo-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.footer__logo-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    display: block;
+    transition: transform .4s;
+}
+
+.footer__logo-img:hover {
+    transform: scale(1.05);
+}
+
+.footer__about {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.footer__company-name {
+    font-size: var(--h2-font-size);
+    color: var(--title-color);
+    margin-bottom: 1rem;
+    font-family: var(--second-font);
+    font-weight: var(--font-semi-bold);
+}
+
+.footer__description {
+    font-size: var(--normal-font-size);
+    color: var(--text-color);
+    line-height: 2.2;
+}
+
+.footer__contact {
+    text-align: left;
+}
+
+.footer__contact-title {
+    font-size: var(--h3-font-size);
+    color: var(--title-color);
+    margin-bottom: 1.5rem;
+    font-family: var(--second-font);
+    font-weight: var(--font-semi-bold);
+}
+
+.footer__contact-list {
+    display: grid;
+    row-gap: 1rem;
+}
+
+.footer__contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color .4s, transform .4s;
+}
+
+.footer__contact-item i {
+    font-size: 1.25rem;
+    color: var(--title-color);
+}
+
+.footer__contact-item:hover {
+    color: var(--title-color);
+    transform: translateX(0.25rem);
+}
+
+.footer__group {
+    margin-top: 1rem;
 }
 
 /*=============== SCROLL BAR ===============*/
@@ -952,10 +1040,6 @@ img{
     gap: 1.2rem !important;
     }
 
-    .footer__copy {
-    margin-top: 1rem !important;
-    display: block !important;
-    }
 
 }
 
@@ -990,17 +1074,21 @@ img{
     }
 
     .footer__content{
-        grid-template-columns: repeat(2, max-content);
-        justify-content: space-between;
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+        text-align: center;
+    }
+
+    .footer__about,
+    .footer__contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .footer__group{
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .footer__copy{
-        order: -1;
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -1029,6 +1117,20 @@ img{
 
     .gallery__container{
         grid-template-columns: repeat(3, 240px);
+    }
+
+    .footer__content {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: flex-start;
+    }
+
+    .footer__about {
+        text-align: left;
+    }
+
+    .footer__contact {
+        text-align: left;
     }
 
     .footer__data{
@@ -1080,11 +1182,11 @@ img{
     }
 
     .home__cards{
-        margin-left: 17rem;
-    }
-
-    .home__card{
-        grid-template-columns: repeat(4, 260px);
+        /* align with the left edge of the content column */
+        margin-left: 0;
+        grid-template-columns: repeat(5, 200px);
+        gap: 1rem;
+        justify-content: start;
     }
 
     .home__card-title{
@@ -1104,7 +1206,11 @@ img{
 
     .about__description{
         margin-bottom: 3rem;
-        text-align: left;
+        text-align: justify;
+        text-justify: inter-word;
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto;
     }
 
     .about__image{
@@ -1177,7 +1283,7 @@ img{
     }
 
     .footer__group{
-        margin-top: 7rem;
+        margin-top: 1.5rem;
     }
 
     .footer__social{

@@ -4,13 +4,13 @@ import Image from "next/image";
 
 export default function partner() {
   const logos = [
-    { src: "/assets/img/google.jpg", alt: "Google" },
-    { src: "/assets/img/ipb.png", alt: "SV" },
-    { src: "/assets/img/kementan.png", alt: "Telkom University" },
-    { src: "/assets/img/Sekneg.png", alt: "Google" },
-    { src: "/assets/img/google.jpg", alt: "Google" },
-    { src: "/assets/img/ipb.png", alt: "SV" },
-    { src: "/assets/img/kementan.png", alt: "Telkom University" },
+    { src: "/assets/img/mitra/Djarum_Putih.png", alt: "Djarum" },
+    { src: "/assets/img/mitra/Gudang_Garam.png", alt: "Gudang Garam" },
+    { src: "/assets/img/mitra/Lotte_Mart.png", alt: "Lotte Mart" },
+    { src: "/assets/img/mitra/Rcraft.webp", alt: "RCraft" },
+    { src: "/assets/img/mitra/Metland.png", alt: "Metland" },
+    { src: "/assets/img/mitra/Surya_Madistrindo.png", alt: "Surya Madistrindo" },
+    { src: "/assets/img/mitra/Poda.png", alt: "Poda" },
     { src: "/assets/img/Sekneg.png", alt: "Google" },
     { src: "/assets/img/google.jpg", alt: "SV" },
     { src: "/assets/img/ipb.png", alt: "Telkom University" },
@@ -35,12 +35,12 @@ export default function partner() {
         {/* LOGO GRID */}
         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 gap-x-15 gap-y-12 place-items-center">
           {logos.map((item, i) => (
-            <div key={i} className="w-[90px] opacity-80 hover:opacity-100 transition">
+            <div key={i} className="w-[130px] opacity-80 hover:opacity-100 transition">
               <Image
                 src={item.src}
                 alt={item.alt}
-                width={200}
-                height={80}
+                width={500}
+                height={200}
                 className="object-contain"
               />
             </div>
